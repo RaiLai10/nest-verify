@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NEST — Email Verified</title>
+<style>
+  :root {
+    --gold: #D4AF37;
+    --gold-light: #E2B93B;
+    --ink: #2A1A05;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg,
+      #D99A1F 0%,
+      #C97A1A 22%,
+      #A83A1C 45%,
+      #8F1F1C 65%,
+      #6E1414 100%);
+    padding: 24px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 48px 36px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+  }
+
+  .check {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .check svg {
+    width: 38px;
+    height: 38px;
+  }
+
+  h1 {
+    margin: 0 0 10px;
+    font-size: 22px;
+    letter-spacing: 0.3px;
+  }
+
+  p {
+    margin: 0 0 28px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .brand {
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: rgba(212, 175, 55, 0.55);
+    margin-top: 8px;
+  }
+
+  .note {
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="check">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 13l4 4L19 7" stroke="#2A1A05" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="status">Email confirmed</div>
+    <h1>Your account is verified!</h1>
+    <p id="message">You can close this tab and log in to NEST from the app.</p>
+    <div class="brand">NEST</div>
+    <div class="note" id="fallbackNote"></div>
+  </div>
+
+  <script>
+    // If your app registers a custom URL scheme (deep link) for auth
+    // callbacks, e.g. "nestapp://auth-callback", uncomment and set it
+    // below. Mobile OSes will offer to open the app automatically.
+    //
+    // const APP_DEEP_LINK = "nestapp://auth-callback" + window.location.search;
+    // window.location.href = APP_DEEP_LINK;
+
+    // Optional: auto-close if this was opened as its own tab/window.
+    // Most browsers block window.close() unless the tab was opened by
+    // script, so this quietly no-ops otherwise — harmless either way.
+    setTimeout(() => {
+      window.close();
+    }, 4000);
+  </script>
+</body>
+</html>
